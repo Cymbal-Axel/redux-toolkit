@@ -8,10 +8,14 @@ const MiRouter = () => {
         <>
         <Router>
             <div>
-                <Link to='/uno'><button>Ir al Uno</button></Link>
-                <Link to='/dos'><button>Ir alDos</button></Link>
-            </div>
+                <Link to='/uno'>
+                    <button>Ir al Uno</button>
+                </Link>
 
+                <Link to='/dos'>
+                    <button>Ir alDos</button>
+                </Link>
+            </div>
             <Routes>
                 <Route path="/uno" element={<Uno/>}/>
                 <Route path='/dos' element={<Dos/>}/>
