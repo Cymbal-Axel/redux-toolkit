@@ -2,10 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const origenSlice = createSlice({
     name: 'unValor',
-    initialState: {miNombre: 'axel'},
+    initialState: {miNombre: 'axel', edad: 18,
+    bibliotecas:[{nombre: "react", inicio: 2013}, {nombre: "redux", inicio: 2015}] 
+    },
     reducers: {
         guardarMiNombre: (state, action) => {
             state.miNombre = action.payload;
+        },
+
+        modificarUnValor: (state, action)=> {
+            const {indice, nuevoNombre, nuevoInicio} = action.payload;
+            state.bibliotecas[indice].nombre = nuevoNombre;
+            state.bibliotecas[indice].inicio = nuevoInicio;
         }
     }
 });
@@ -22,3 +30,4 @@ export const otroSlice = createSlice({
 
 export const {incrementarPuntuacion} = otroSlice.actions;
 export const {guardarMiNombre} = origenSlice.actions;
+export const {modificarUnValor} = origenSlice.actions;
