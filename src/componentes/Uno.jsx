@@ -29,6 +29,8 @@ const Uno = () => {
         <button onClick={incrementar}>incrementar puntuacion</button>
         <button onClick={modificar}>Modificar Nombre</button>
         <button onClick={modificarArray}>Modificar Array</button>
+        <button onClick={agregar}>Agregar un Valor</button>
+        <button onClick={eliminar}>Eliminar un Valor</button>
         </>
     )
 };
