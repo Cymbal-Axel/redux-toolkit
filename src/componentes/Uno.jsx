@@ -22,6 +22,14 @@ const Uno = () => {
             nuevoInicio: "Mayo 2013"
         }))
     }
+
+    const agregar = () => {
+
+    }
+
+    const eliminar = () => {
+        
+    }
     return(
         <>
         <h1>{miNombreAhora}</h1>
