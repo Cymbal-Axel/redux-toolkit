@@ -14,6 +14,15 @@ export const origenSlice = createSlice({
             const {indice, nuevoNombre, nuevoInicio} = action.payload;
             state.bibliotecas[indice].nombre = nuevoNombre;
             state.bibliotecas[indice].inicio = nuevoInicio;
+        },
+
+        agregarUnValor: (state, action)=> {
+            const {nuevoNombre, nuevoInicio} = action.payload;
+            state.bibliotecas = [...state.bibliotecas, {nombre:nuevoNombre, inicio: nuevoInicio}]
+        },
+
+        eliminarUnValor: (state, action) => {
+            state.bibliotecas = state.bibliotecas.filter(valor => valor.nombre != action.payload)
         }
     }
 });
@@ -28,6 +37,8 @@ export const otroSlice = createSlice({
     }
 })
 
+export const {eliminarUnValor} = origenSlice.actions
+export const {agregarUnValor} = origenSlice.actions
 export const {incrementarPuntuacion} = otroSlice.actions;
 export const {guardarMiNombre} = origenSlice.actions;
 export const {modificarUnValor} = origenSlice.actions;
