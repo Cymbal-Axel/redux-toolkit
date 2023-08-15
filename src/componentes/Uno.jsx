@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { guardarMiNombre, incrementarPuntuacion, modificarUnValor } from '../store/misSlice';
+import { guardarMiNombre, incrementarPuntuacion, modificarUnValor, agregarUnValor, eliminarUnValor } from '../store/misSlice';
 
 const Uno = () => {
     const dispatch = useDispatch();
@@ -24,11 +24,14 @@ const Uno = () => {
     }
 
     const agregar = () => {
-
+        dispatch(agregarUnValor({
+            nuevoNombre:"Vue",
+            nuevoInicio: 2014
+        }))
     }
 
     const eliminar = () => {
-        
+        dispatch(eliminarUnValor("Vue"))
     }
     return(
         <>
